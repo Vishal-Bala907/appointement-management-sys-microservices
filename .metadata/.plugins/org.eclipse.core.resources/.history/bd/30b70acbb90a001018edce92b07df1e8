@@ -1,0 +1,10 @@
+#spring:
+#  application:
+#    name: gatewat
+#  cloud:
+#    gateway:
+#      mvc:
+#        routes:
+#        - uri:
+#server:
+#  port: 3000

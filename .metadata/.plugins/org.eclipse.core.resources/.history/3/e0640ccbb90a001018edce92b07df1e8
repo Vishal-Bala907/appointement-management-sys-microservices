@@ -1,0 +1,7 @@
+spring:
+  cloud:
+    gateway:
+      mvc:
+        routes:
+          - id: APP_SERVICE
+            

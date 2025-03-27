@@ -1,0 +1,5 @@
+package com.mservice.apt.controllers;
+
+public class AuthController {
+
+}
