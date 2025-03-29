@@ -1,0 +1,33 @@
+package com.mservice.gateway;
+
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.security.oauth2.jwt.JwtDecoder;
+import org.springframework.security.oauth2.jwt.NimbusJwtDecoder;
+import org.springframework.security.web.SecurityFilterChain;
+
+@EnableWebSecurity
+@Configuration
+public class SecurityConfiguration {
+
+	@Value("${JWKS_URI}")
+	private String JWKS_URI; // = "https://dev-77290841.okta.com/oauth2/auso1o0jujLIp5SIP5d7/v1/keys";
+
+	@Bean
+	SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+		http.authorizeHttpRequests(auth -> auth.anyRequest().authenticated());
+
+		// Enable JWT-based authentication
+		http.oauth2ResourceServer(oauth2 -> oauth2.jwt(jwt -> jwt.decoder(jwtDecoder())));
+
+		return http.build();
+	}
+
+	@Bean
+	JwtDecoder jwtDecoder() {
+		return NimbusJwtDecoder.withJwkSetUri(JWKS_URI).build();
+	}
+}

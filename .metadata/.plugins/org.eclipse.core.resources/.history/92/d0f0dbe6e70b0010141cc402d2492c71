@@ -1,0 +1,5 @@
+package com.mservice.gateway;
+
+public class SecurityConfiguration {
+
+}

@@ -1,0 +1,14 @@
+spring.application.name=gateway
+server.port=3000
+eureka.client.service-url.defaultZone=http://localhost:8080/eureka/
+spring.cloud.gateway.mvc.routes[0].id=APP_SERVICE
+spring.cloud.gateway.mvc.routes[0].uri=lb://APPOINTMENT-SERVICE
+spring.cloud.gateway.mvc.routes[0].predicates[0]=Path=/auth/**
+spring.cloud.gateway.mvc.routes[1].id=USER_SERVCE
+spring.cloud.gateway.mvc.routes[1].uri=lb://USER-SERVICE
+spring.cloud.gateway.mvc.routes[1].predicates[0]=Path=/test/**
+
+
+okta.oauth2.issuer=https://dev-77290841.okta.com/oauth2/default
+okta.oauth2.client-id=0oao1ndtpl18sqHSC5d7
+okta.oauth2.client-secret=qrjpgK4__BZWFxZBKhZEb7XUdBCzOd7oUolIg3dYKxmcUXWKWB9R9NXIfEpzOoVr
