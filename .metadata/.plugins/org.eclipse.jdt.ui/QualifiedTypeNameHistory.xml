@@ -10,4 +10,7 @@
     <fullyQualifiedTypeName name="org.springframework.security.config.annotation.web.configurers.oauth2.server.resource.OAuth2ResourceServerConfigurer"/>
     <fullyQualifiedTypeName name="org.springframework.security.config.annotation.web.configuration.EnableWebSecurity"/>
     <fullyQualifiedTypeName name="org.springframework.context.annotation.Configuration"/>
+    <fullyQualifiedTypeName name="org.springframework.security.oauth2.jwt.JwtDecoder"/>
+    <fullyQualifiedTypeName name="org.springframework.security.oauth2.jwt.NimbusJwtDecoder"/>
+    <fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Value"/>
 </qualifiedTypeNameHistroy>
